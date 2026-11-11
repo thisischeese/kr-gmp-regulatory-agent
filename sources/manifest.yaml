@@ -1,0 +1,106 @@
+# 수집 대상 문서 목록
+# - kind: law       → 국가법령정보센터 법령(법률·대통령령·총리령) 본문 (HTML → 조문 단위 JSON)
+# - kind: admrul    → 국가법령정보센터 행정규칙(식약처 고시 등) 본문 (HTML → 조문 단위 JSON)
+# - kind: appendix  → 위 문서의 별표 파일 (HWP·PDF 원본 → kordoc 파싱)
+# - kind: user_file → 자동 수집이 안 되는 가이드라인·민원인 안내서 (사용자가 data/raw/user_docs/ 에 직접 넣음)
+#
+# 문서 위계(tier): 1 법률 > 2 대통령령 > 3 총리령 > 4 고시(행정규칙) > 5 가이드라인·안내서(법적 구속력 없음)
+
+documents:
+  - id: yaksa_act
+    kind: law
+    title: 약사법
+    tier: 1
+    law_name: 약사법
+    why: 제조업자의 생산관리의무(제38조), 제조업 허가(제31조), 회수(제39조), 행정처분·벌칙의 근거 법률
+
+  - id: yaksa_decree
+    kind: law
+    title: 약사법 시행령
+    tier: 2
+    law_name: 약사법시행령
+    why: 과징금·위임사항 등 법률 시행에 필요한 사항
+
+  - id: safety_rule
+    kind: law
+    title: 의약품 등의 안전에 관한 규칙
+    tier: 3
+    law_name: 의약품등의안전에관한규칙
+    why: 제조업자 준수사항(제48조), GMP 적합판정, 회수·보고 절차 등 실무 준수사항
+
+  - id: facility_decree
+    kind: law
+    title: 의약품등의 제조업 및 수입자의 시설기준령
+    tier: 2
+    law_name: 의약품등의제조업및수입자의시설기준령
+    why: 제조소 시설기준
+
+  - id: kgmp_annex1
+    kind: appendix
+    title: "[별표 1] 의약품 제조 및 품질관리기준"
+    tier: 3
+    parent: safety_rule
+    appendix_title: "[별표 1] 의약품 제조 및 품질관리기준"
+    why: KGMP 본체 — 수율·수율관리기준 정의, 제조관리(수율관리기준 이탈 시 원인조사·대책), 일탈·기준일탈 조사, 제조기록서
+
+  - id: admin_sanction_annex8
+    kind: appendix
+    title: "[별표 8] 행정처분의 기준"
+    tier: 3
+    parent: safety_rule
+    appendix_title: "[별표 8] 행정처분의 기준"
+    why: GMP 위반 시 행정처분 수준 (준수 실패의 결과)
+
+  - id: gmp_notice
+    kind: admrul
+    title: 의약품 제조 및 품질관리에 관한 규정
+    tier: 4
+    rule_name: 의약품제조및품질관리에관한규정
+    why: KGMP 세부 운영 고시 (식약처 고시) — 조문과 별표 1~18
+
+  - id: gmp_notice_annex17
+    kind: appendix
+    title: "[별표 17] 완제의약품 제조"
+    tier: 4
+    parent: gmp_notice
+    appendix_title: "[별표 17] 완제의약품 제조"
+    why: 완제의약품(고형제 포함) 제조의 상세 요건 — 품질경영, 일탈, 변경관리, 시정·예방조치, 제품품질평가 등
+
+  - id: gmp_notice_annex13
+    kind: appendix
+    title: "[별표 13] 적격성평가와 밸리데이션"
+    tier: 4
+    parent: gmp_notice
+    appendix_title: "[별표 13] 적격성평가와 밸리데이션"
+    why: 공정 밸리데이션·재밸리데이션·변경관리 요건 (수율 저하가 공정 변경으로 이어질 때)
+
+  - id: gmp_notice_annex9
+    kind: appendix
+    title: "[별표 9] 컴퓨터화 시스템"
+    tier: 4
+    parent: gmp_notice
+    appendix_title: "[별표 9] 컴퓨터화 시스템"
+    why: 자동 탐지·알림 시스템 자체(컴퓨터화 시스템)의 밸리데이션·데이터 완전성 요건
+
+  - id: recall_notice
+    kind: admrul
+    title: 의약품등 회수에 관한 규정
+    tier: 4
+    rule_name: 의약품등회수에관한규정
+    why: 품질 결함이 출하 제품에 영향을 준 경우의 회수 절차
+
+# ── 자동 수집 불가 문서 (식약처 사이트가 해외 IP 접속을 차단해 이 실험 환경에서는 받을 수 없었음) ──
+# 국내에서 아래 문서를 내려받아 data/raw/user_docs/ 에 넣으면 `kgmp ingest` 가 kordoc 으로 함께 색인한다.
+user_docs_recommended:
+  - title: 의약품 제조업자 등의 일탈 관리 가이드라인 (민원인 안내서)
+    where: 식약처 > 법령/자료 > 공무원지침서·민원인안내서 (또는 의약품안전나라)
+  - title: 의약품 공정 밸리데이션 가이드라인
+    where: 식약처 / 식품의약품안전평가원
+  - title: 의약품 품질위험관리(ICH Q9) 가이드라인
+    where: 식약처
+  - title: 의약품 제조소 변경관리 가이드라인 / 제품품질평가(PQR) 가이드라인
+    where: 식약처
+  - title: 의약품 데이터 완전성 가이드라인
+    where: 식약처
+  - title: PIC/S GMP Guide (PE 009) Part I · Annex 15
+    where: picscheme.org — 한국은 PIC/S 가입국(2014)으로 고시 별표가 PIC/S Annex 구성을 따름

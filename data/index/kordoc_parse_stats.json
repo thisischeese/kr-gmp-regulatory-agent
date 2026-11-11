@@ -1,0 +1,67 @@
+[
+ {
+  "doc": "kgmp_annex1",
+  "hwp_sec": 0.34,
+  "hwp_kb": 103,
+  "pdf_sec": 1.08,
+  "pdf_kb": 197,
+  "chars": 16614,
+  "sim": 1.0,
+  "tr_hwp": 0,
+  "tr_pdf": 0,
+  "rowspan_hwp": 0,
+  "rowspan_pdf": 0
+ },
+ {
+  "doc": "admin_sanction_annex8",
+  "hwp_sec": 0.39,
+  "hwp_kb": 199,
+  "pdf_sec": 2.1,
+  "pdf_kb": 292,
+  "chars": 32076,
+  "sim": 1.0,
+  "tr_hwp": 340,
+  "tr_pdf": 340,
+  "rowspan_hwp": 2,
+  "rowspan_pdf": 2
+ },
+ {
+  "doc": "gmp_notice_annex17",
+  "hwp_sec": 0.45,
+  "hwp_kb": 68,
+  "pdf_sec": 1.75,
+  "pdf_kb": 529,
+  "chars": 34098,
+  "sim": 1.0,
+  "tr_hwp": 0,
+  "tr_pdf": 0,
+  "rowspan_hwp": 0,
+  "rowspan_pdf": 0
+ },
+ {
+  "doc": "gmp_notice_annex13",
+  "hwp_sec": 0.39,
+  "hwp_kb": 28,
+  "pdf_sec": 1.11,
+  "pdf_kb": 335,
+  "chars": 11757,
+  "sim": 1.0,
+  "tr_hwp": 0,
+  "tr_pdf": 0,
+  "rowspan_hwp": 0,
+  "rowspan_pdf": 0
+ },
+ {
+  "doc": "gmp_notice_annex9",
+  "hwp_sec": 0.42,
+  "hwp_kb": 17,
+  "pdf_sec": 0.77,
+  "pdf_kb": 249,
+  "chars": 3710,
+  "sim": 1.0,
+  "tr_hwp": 0,
+  "tr_pdf": 0,
+  "rowspan_hwp": 0,
+  "rowspan_pdf": 0
+ }
+]

@@ -1,0 +1,33 @@
+{
+  "event_type": "yield_below_limit",
+  "detected_by": "yield-monitor-agent",
+  "detected_at": "2026-11-12T09:40:00+09:00",
+  "site": "OO제약 오송공장 고형제동",
+  "product": {
+    "name": "OO정 20mg (필름코팅정)",
+    "dosage_form": "정제",
+    "batch_no": "B-2026-0789",
+    "batch_size_tablets": 960000
+  },
+  "process_step": "타정",
+  "process_step_completed_at": "2026-11-12T09:10:00+09:00",
+  "yield": {
+    "theoretical_kg": 211.2,
+    "actual_kg": 185.8,
+    "actual_pct": 87.97,
+    "limit_range_pct": [96.5, 100.5],
+    "limit_basis": "수율관리기준(제품별 연간 평균생산수율 범위)",
+    "previous_10_batches_mean_pct": 98.6
+  },
+  "signals": {
+    "press_rejects_tablets": 43707,
+    "stoppages": 10,
+    "stoppage_minutes": 183,
+    "main_compression_force_vs_product_mean": 2.7,
+    "tablet_press_speed_vs_product_mean": 2.3,
+    "max_ejection_force_vs_product_mean": 3.1,
+    "ipc_min_hardness_vs_product_mean": 0.83
+  },
+  "batch_status": "타정 완료, 코팅 대기 (출하 전)",
+  "notes": "Lek(Sandoz) 공개 데이터셋의 최저 수율 배치(789)를 바탕으로 만든 가상 이벤트"
+}

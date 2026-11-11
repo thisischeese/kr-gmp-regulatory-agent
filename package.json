@@ -1,0 +1,8 @@
+{
+  "name": "kr-gmp-regulatory-agent-parser",
+  "private": true,
+  "description": "kordoc (Korean document parser) for the RAG ingestion step",
+  "dependencies": {
+    "kordoc": "4.24.65"
+  }
+}
